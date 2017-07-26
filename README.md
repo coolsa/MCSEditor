@@ -3,7 +3,11 @@
 
 An Online editor for [Minecraft Script]('https://github.com/PandawanFr/mcs').
 
+Edit mode
+![Input](http://i.imgur.com/lQ3vc1H.png)
 
+Compiled
+![Output](http://i.imgur.com/bQchye4.png)
 
 Check out the [documentation](https://github.com/PandawanFr/mcs/wiki) to learn how to write in Minecraft Script.
 
