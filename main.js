@@ -92,7 +92,7 @@ document.getElementById('compile-btn').addEventListener('click', function () {
 				// Add click events
 				fileTab.addEventListener('click', function () {
 					selectTab(this);
-					outputEditor.setValue(JSON.stringify(file).split('').slice(1, -1).join('').replace(/(?:\\[rn])+/g, "\n"));
+					outputEditor.setValue(JSON.stringify(file).split('').slice(1, -1).join('').replace(/(?:\\[rn])+/g, "\n").replace(/(?:\\")/g, '"'));
 					setTimeout(function() {
 						outputEditor.refresh();
 					},1);
@@ -101,7 +101,7 @@ document.getElementById('compile-btn').addEventListener('click', function () {
 				// Auto-focus the first tab
 				if (fileN == 0) {
 					selectTab(fileTab);
-					outputEditor.setValue(JSON.stringify(file).split('').slice(1, -1).join('').replace(/(?:\\[rn])+/g, "\n"));
+					outputEditor.setValue(JSON.stringify(file).split('').slice(1, -1).join('').replace(/(?:\\[rn])+/g, "\n").replace(/(?:\\")/g, '"'));
 					setTimeout(function() {
 						outputEditor.refresh();
 					},1);
