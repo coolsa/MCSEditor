@@ -1,7 +1,7 @@
 # MCS Editor
 **[Try it](https://pandawanfr.github.io/MCSEditor/)**
 
-An Online editor for [Minecraft Script]('https://github.com/PandawanFr/mcs').
+An Online editor for [Minecraft Script](https://github.com/PandawanFr/mcs).
 
 Edit mode
 ![Input](http://i.imgur.com/lQ3vc1H.png)
