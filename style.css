@@ -52,7 +52,11 @@ a:hover {
 	white-space: nowrap;
 }
 
-.output-titles:hover {
+.output-titles:hover{
+	overflow-x: hidden;
+}
+
+.output-titles.scroll:hover {
 	overflow-x: scroll;
 }
 

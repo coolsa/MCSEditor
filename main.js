@@ -8,6 +8,7 @@ var cursorText = document.getElementById('cursor-pos');
 var compiled = document.getElementById('cont-compiled');
 var original = document.getElementById('cont-original');
 var msgObj = document.getElementById('msg');
+var outputTitles = document.getElementById('output-titles');
 
 //var mcsMode = CodeMirrorGrammar.getMode(mcsGrammar);
 
@@ -34,17 +35,17 @@ updateCursorInfo(editor);
 	function scrollHorizontally(e) {
 		e = window.event || e;
 		var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
-		document.getElementById('output-titles').scrollLeft -= (delta*40); // Multiplied by 40
+		outputTitles.scrollLeft -= (delta*40); // Multiplied by 40
 		e.preventDefault();
 	}
-	if (document.getElementById('output-titles').addEventListener) {
+	if (outputTitles.addEventListener) {
 		// IE9, Chrome, Safari, Opera
-		document.getElementById('output-titles').addEventListener("mousewheel", scrollHorizontally, false);
+		outputTitles.addEventListener("mousewheel", scrollHorizontally, false);
 		// Firefox
-		document.getElementById('output-titles').addEventListener("DOMMouseScroll", scrollHorizontally, false);
+		outputTitles.addEventListener("DOMMouseScroll", scrollHorizontally, false);
 	} else {
 		// IE 6/7/8
-		document.getElementById('output-titles').attachEvent("onmousewheel", scrollHorizontally);
+		outputTitles.attachEvent("onmousewheel", scrollHorizontally);
 	}
 })();
 
@@ -75,8 +76,8 @@ document.getElementById('compile-btn').addEventListener('click', function () {
 		this.textContent = 'Edit';
 
 		// Remove every tabs
-		while (document.getElementById('output-titles').firstChild) {
-			document.getElementById('output-titles').removeChild(document.getElementById('output-titles').firstChild);
+		while (outputTitles.firstChild) {
+			outputTitles.removeChild(outputTitles.firstChild);
 		}
 
 		// Create new tabs
@@ -87,7 +88,7 @@ document.getElementById('compile-btn').addEventListener('click', function () {
 				var fileTab = document.createElement('div');
 				fileTab.classList = 'mini-title';
 				fileTab.textContent = fileName;
-				document.getElementById('output-titles').appendChild(fileTab);
+				outputTitles.appendChild(fileTab);
 
 				// Add click events
 				fileTab.addEventListener('click', function () {
@@ -108,6 +109,12 @@ document.getElementById('compile-btn').addEventListener('click', function () {
 					outputEditor.focus();
 				}
 			})();
+		}
+
+		if (isOverflown(outputTitles) || outputTitles.children.length > 5) {
+			outputTitles.classList = 'output-titles scroll';
+		} else {
+			outputTitles.classList = 'output-titles';
 		}
 
 		// Show compiled, hide original
@@ -133,11 +140,15 @@ document.getElementById('compile-btn').addEventListener('click', function () {
 });
 
 function selectTab(tab) {
-	var children = document.getElementById('output-titles').children;
+	var children = outputTitles.children;
 	for (var i = 0; i < children.length; i++) {
 		children[i].classList = 'mini-title';
 	}
 	tab.classList = 'mini-title tab-active';
+}
+
+function isOverflown(element) {
+    return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
 }
 
 function updateCursorInfo (e) {
