@@ -3,10 +3,10 @@
 
 An Online editor for [Minecraft Script](https://github.com/PandawanFr/mcs).
 
-Edit mode
+Edit mode:
 ![Input](http://i.imgur.com/lQ3vc1H.png)
 
-Compiled
+Compiled:
 ![Output](http://i.imgur.com/bQchye4.png)
 
 Check out the [documentation](https://github.com/PandawanFr/mcs/wiki) to learn how to write in Minecraft Script.
@@ -19,3 +19,8 @@ Theme is [one-dark](https://github.com/Aerobird98/codemirror-one-dark-theme) (in
 Coding editor is [CodeMirror](https://codemirror.net/).
 
 Everything else is in custom vanilla JS, and CSS.
+
+## License
+Please see the [LICENSE](https://github.com/PandawanFr/MCSEditor/blob/master/LICENSE) file
+
+Minecraft Script is not affiliated with Minecraft or Mojang AB.
