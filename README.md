@@ -3,11 +3,14 @@
 
 An Online editor for [Minecraft Script](https://github.com/PandawanFr/mcs).
 
+You can now download your output as a ZIP file!
+
 Edit mode:
-![Input](http://i.imgur.com/lQ3vc1H.png)
+![Input](http://i.imgur.com/R55F6D0.png)
 
 Compiled:
-![Output](http://i.imgur.com/bQchye4.png)
+![Output](http://i.imgur.com/iawn4zC.png)
+
 
 Check out the [documentation](https://github.com/PandawanFr/mcs/wiki) to learn how to write in Minecraft Script.
 
