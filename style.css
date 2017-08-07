@@ -178,6 +178,11 @@ a:hover {
 	#nav-title {
 		font-size: 1.5em;
 	}
+
+	.bar-btn {
+		padding: 0.5em;
+		margin: 0;
+	}
 }
 
 @media only screen and (max-width: 576px) {
@@ -223,6 +228,10 @@ a:hover {
 
 .cm-variable-2 {
 	color: #42A2EF !important;
+}
+
+.cm-command {
+	color: #56b6c2 !important;
 }
 
 

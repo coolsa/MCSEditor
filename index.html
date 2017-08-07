@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<title>Minecraft Script Editor</title>
-	<meta name="description" content="Scripting Language to write functions more easily">
+	<meta name="description" content="A pre-processor to write Minecraft Functions more efficiently.">
 	<meta name="author" content="Pandawan">
 
 	<!--[if lt IE 9]>
@@ -16,13 +16,11 @@
 	<link rel="stylesheet" href="https://rawgit.com/PandawanFr/MCSEditor/master/style.css">
 </head>
 <body spellcheck="false">
-	<div style="position: fixed; background-color: red; color: white; top: 0; bottom: 0; left: 0; right: 0;">
-		MCSEditor is currently being upgraded to v2.0.0
-	</div>
 	<div id="nav">
 		<h1 id="nav-title">Minecraft Script Editor</h1>
 		<div id="nav-container">
-			<button class="btn" id="compile-btn">Compile</button>
+			<button class="btn bar-btn" id="compile-btn">Compile</button>
+			<button class="btn bar-btn" id="download-btn">Download</button>
 		</div>
 	</div>
 	<div id="app">
@@ -49,6 +47,8 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.28.0/codemirror.min.js" integrity="sha256-aWhXcDXKdLgrSERG+VW43eHufU1IMcf6pG+9lUcxeIs=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.28.0/addon/mode/simple.min.js" integrity="sha256-yX4ev0jImEwlwhUshNkphd2j3K+S8Hqv8KSqCMnRhEI=" crossorigin="anonymous"></script>
 	<script src="https://unpkg.com/mcs"></script>
+	<script src="https://unpkg.com/file-saver"></script>
+	<script src="https://unpkg.com/jszip/dist/jszip.min.js"></script>
 	<script src="https://rawgit.com/PandawanFr/MCSEditor/master/mcs-grammar.js"></script>
 	<script src="https://rawgit.com/PandawanFr/MCSEditor/master/main.js"></script>
 </body>

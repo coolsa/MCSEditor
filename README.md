@@ -14,9 +14,13 @@ Check out the [documentation](https://github.com/PandawanFr/mcs/wiki) to learn h
 
 ## Credits
 
-Theme is [one-dark](https://github.com/Aerobird98/codemirror-one-dark-theme) (inspired from Atom's one dark).
-
 Coding editor is [CodeMirror](https://codemirror.net/).
+
+CodeMirror Theme is [one-dark](https://github.com/Aerobird98/codemirror-one-dark-theme) (inspired from Atom's one dark).
+
+ZIP Creator is [JSZip](https://stuk.github.io/jszip/).
+
+File Saver (download) is [FileSaver.js](https://github.com/eligrey/FileSaver.js/).
 
 Everything else is in custom vanilla JS, and CSS.
 
