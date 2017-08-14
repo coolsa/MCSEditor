@@ -65,8 +65,11 @@ document.getElementById('compile-btn').addEventListener('click', function() {
 
         var output;
         try {
+			// Calculate new output
             output = mcs(inputVal);
-
+            // Need to reset current output so it doesn't show old functions
+            currentOutput = {};
+			// Populate the currentOutput data with the newly calculated data
             var namespace = Object.keys(output)[0];
             recursiveOutput(output[namespace], namespace, finalZip.folder(namespace));
         } catch (err) {
@@ -74,6 +77,7 @@ document.getElementById('compile-btn').addEventListener('click', function() {
             return;
         }
 
+		// Enable Compile View
         showOutput = true;
         this.textContent = 'Edit';
 

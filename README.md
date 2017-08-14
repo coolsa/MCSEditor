@@ -3,7 +3,7 @@
 
 An Online editor for [Minecraft Script](https://github.com/PandawanFr/mcs).
 
-You can now download your output as a ZIP file!
+You can now download your compiled functions as a ZIP file!
 
 Edit mode:
 ![Input](http://i.imgur.com/R55F6D0.png)
