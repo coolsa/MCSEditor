@@ -56,6 +56,10 @@ editor.on('change', function(cm) {
 
 editor.on('cursorActivity', updateCursorInfo);
 
+if(localStorage.text==undefined)localStorage.text="";
+editor.on("change",function(){localStorage.text = editor.getValue()})
+editor.setValue(localStorage.text);
+
 document.getElementById('compile-btn').addEventListener('click', function() {
     if (!showOutput) {
         if (!inputVal) {
