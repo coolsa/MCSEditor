@@ -25,6 +25,8 @@ ZIP Creator is [JSZip](https://stuk.github.io/jszip/).
 
 File Saver (download) is [FileSaver.js](https://github.com/eligrey/FileSaver.js/).
 
+Thanks to [@coolsa](https://github.com/coolsa) for adding local storage saving.
+
 Everything else is in custom vanilla JS, and CSS.
 
 ## License

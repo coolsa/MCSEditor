@@ -1,8 +1,3 @@
-// Keywords: function, execute, var
-// Variables/Identifiers: $something
-// Comments #, //
-
-
 var inputVal = '',
     showOutput = false,
     currentOutput = {};
@@ -56,8 +51,13 @@ editor.on('change', function(cm) {
 
 editor.on('cursorActivity', updateCursorInfo);
 
-if(localStorage.text==undefined)localStorage.text="";
-editor.on("change",function(){localStorage.text = editor.getValue()})
+// Local Storage
+if (localStorage.text == undefined) localStorage.text = "";
+// When it changes save it in local storage
+editor.on("change", function() {
+    localStorage.text = editor.getValue();
+});
+// Update the text with the currently saved data on first load
 editor.setValue(localStorage.text);
 
 document.getElementById('compile-btn').addEventListener('click', function() {
@@ -69,11 +69,11 @@ document.getElementById('compile-btn').addEventListener('click', function() {
 
         var output;
         try {
-			// Calculate new output
+            // Calculate new output
             output = mcs(inputVal);
             // Need to reset current output so it doesn't show old functions
             currentOutput = {};
-			// Populate the currentOutput data with the newly calculated data
+            // Populate the currentOutput data with the newly calculated data
             var namespace = Object.keys(output)[0];
             recursiveOutput(output[namespace], namespace, finalZip.folder(namespace));
         } catch (err) {
@@ -81,7 +81,7 @@ document.getElementById('compile-btn').addEventListener('click', function() {
             return;
         }
 
-		// Enable Compile View
+        // Enable Compile View
         showOutput = true;
         this.textContent = 'Edit';
 
