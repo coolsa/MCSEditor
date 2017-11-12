@@ -173,7 +173,13 @@ a:hover {
 	text-align: right;
 }
 
-/* MOBILE */
+#footer .container-right .not-link {
+	color: #ABB2BF;
+	text-decoration: none;
+	cursor: text;
+}
+
+/* RESPONSIVE */
 @media only screen and (max-width: 768px) {
 	#nav-title {
 		font-size: 1.5em;
