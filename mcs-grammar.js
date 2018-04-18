@@ -21,7 +21,7 @@ CodeMirror.defineSimpleMode("mcs", {
             token: ["variable"]
         },
         {
-            regex: /(\s*#file:|#extend:)(\s+)([\w\d$\/\._-]*)/,
+            regex: /(\s*#file:|\s*#extend:)(\s+)([\w\d$\/\._-]*)/,
             token: ["keyword", null, "variable-2"],
             sol: true
         },
