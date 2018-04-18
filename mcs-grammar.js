@@ -2,18 +2,18 @@ CodeMirror.defineSimpleMode("mcs", {
     start: [
         // Group, Functions, Macros
         {
-            regex: /(group|macro|function)(\s+)([\w\d$_-]*)/,
+            regex: /(modal)(\s+)([\w\d$\/\._-]*)/,
             token: ["keyword", null, "variable-2"]
         },
         // Basic keywords
         {
-            regex: /(?:var|return|if|foreach|for|else|in)/,
+            regex: /(?:if|then|else|true|false|for|as|at|asat|positioned|align|dimension|rotated|anchored|while|do|forEach|raycast|stop|continue|switch|case|default|var|bool|boolean|tag|score|const)/,
             token: "keyword"
         },
         // Execute
         {
-            regex: /(\s*)(execute)(\s+)(@[apers](?:\[[a-zA-Z0-9_=,!$]*?\]+)?)(\s+)((?:[~\d.-]+\s){3})/,
-            token: [null, "keyword", null, "variable-3", null, "variable-3"]
+            regex: /(\s*)(execute)(\s+)(align|as|at|if|offset|run|store|unless)/,
+            token: [null, "keyword", null, "variable-3"]
         },
         // Variables
         {
@@ -21,8 +21,8 @@ CodeMirror.defineSimpleMode("mcs", {
             token: ["variable"]
         },
         {
-            regex: /(@!namespace)/,
-            token: "keyword",
+            regex: /(#file:|#extend:)(\s+)([\w\d$\/\._-]*)/,
+            token: ["keyword", null, "variable-2"],
             sol: true
         },
         // Selectors
@@ -36,21 +36,17 @@ CodeMirror.defineSimpleMode("mcs", {
             token: ["comment"],
             sol: true
         },
-        {
-            regex: /\s*\/\/.*/,
-            token: ["comment"]
-        },
         // Numbers
         {
             regex: /\b[0-9\.\-]+\b/,
             token: ["number"]
         },
         {
-            regex: /(?:item|xp_orb|leash_knot|painting|item_frame|armor_stand|ender_crystal|egg|arrow|snowball|fireball|small_fireball|ender_pearl|eye_of_ender_signal|potion|xp_bottle|wither_skull|fireworks_rocket|tnt|falling_block|commandblock_minecart|boat|minecart|chest_minecart|furnace_minecart|tnt_minecart|hopper_minecart|spawner_minecart|creeper|skeleton|spider|giant|zombie|slime|ghast|zombie_pigman|enderman|cave_spider|silverfish|blaze|magma_cube|ender_dragon|wither|witch|endermite|guardian|shulker|rabbit|bat|pig|sheep|cow|chicken|squid|wolf|mooshroom|snowman|ocelot|villager_golem|horse|villager)\b/,
+            regex: /(?:area_effect_cloud|armor_stand|arrow|bat|blaze|boat|cave_spider|chest_minecart|chicken|cod_mob|commandblock_minecart|cow|creeper|dolphin|donkey|dragon_fireball|drowned|drowned|egg|elder_guardian|ender_crystal|ender_dragon|ender_pearl|enderman|endermite|evocation_fangs|evocation_illager|eye_of_ender_signal|falling_block|fireball|fireworks_rocket|furnace_minecart|ghast|giant|guardian|hopper_minecart|horse|husk|illusion_illager|item|item_frame|leash_knot|lightning_bolt|llama|llama_spit|magma_cube|minecart|mooshroom|mule|ocelot|painting|parrot|phantom|pig|polar_bear|potion|puffer_fish|rabbit|salmon_mob|sheep|shulker|shulker_bullet|silverfish|skeleton|skeleton_horse|slime|small_fireball|snowball|snowman|spawner_minecart|spectral_arrow|spider|squid|stray|tnt|tnt_minecart|trident|tropical_fish|turtle|vex|villager|villager_golem|vindication_illager|witch|wither|wither_skeleton|wither_skull|wolf|xp_bottle|xp_orb|zombie|zombie_horse|zombie_pigman|zombie_villager)\b/,
             token: "property"
         },
         {
-            regex: /\/?(?:achievement|blockdata|clear|clone|debug|defaultgamemode|difficulty|effect|enchant|entitydata|execute|fill|gamemode|gamerule|give|help|me|particle|playsound|stopsound|publish|replaceitem|say|scoreboard|seed|setblock|setscore|setworldspawn|spawnpoint|spreadplayers|stats|summon|tell|tellraw|testfor|testforblock|testforblocks|time|title|toggledownfall|tp|trigger|weather|whitelist|worldborder|xp|teleport|kill)\b/,
+            regex: /\/?(?:advancement|ban|banlist|data|clear|clone|debug|defaultgamemode|deop|difficulty|effect|execute|experience|fill|function|gamemode|gamerule|give|help|kick|kill|list|locate|me|msg|op|pardon|pardon-ip|particle|playsound|publish|recipe|reload|replaceitem|save-all|save-off|save-on|say|scoreboard|seed|setblock|setidletimeout|setworldspawn|spawnpoint|spreadplayers|stop|stopsound|summon|tag|team|teleport|tell|tellraw|time|title|trigger|w|weather|whitelist|worldborder|xp)\b/,
             token: "command"
         },
         {
@@ -63,7 +59,7 @@ CodeMirror.defineSimpleMode("mcs", {
             token: ["operator"]
         },
         {
-            regex: /true|false|null|undefined/,
+            regex: /true|false|undefined/,
             token: "atom"
         },
         {
@@ -84,6 +80,6 @@ CodeMirror.defineSimpleMode("mcs", {
     ],
     meta: {
         dontIndentStates: ["comment"],
-        lineComment: "//"
+        lineComment: "#"
     }
 });
