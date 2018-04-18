@@ -36,6 +36,10 @@ CodeMirror.defineSimpleMode("mcs", {
             token: ["comment"],
             sol: true
         },
+        {
+            regex: /\s*\/\/.*/,
+            token: ["comment"]
+        },
         // Numbers
         {
             regex: /\b[0-9\.\-]+\b/,
@@ -80,6 +84,6 @@ CodeMirror.defineSimpleMode("mcs", {
     ],
     meta: {
         dontIndentStates: ["comment"],
-        lineComment: "#"
+        lineComment: "//"
     }
 });
