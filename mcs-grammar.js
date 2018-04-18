@@ -38,7 +38,8 @@ CodeMirror.defineSimpleMode("mcs", {
         },
         {
             regex: /\s*\/\/.*/,
-            token: ["comment"]
+            token: ["comment"],
+            sol: true
         },
         // Numbers
         {
