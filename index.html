@@ -4,20 +4,20 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>Minecraft Script Editor</title>
-	<meta name="description" content="A pre-processor to write Minecraft Functions more efficiently.">
-	<meta name="author" content="Pandawan">
+	<title>mcscript Editor</title>
+	<meta name="description" content="A pre-processor to write mcscript more efficiently.">
+	<meta name="author" content="coolsa">
 
 	<!--[if lt IE 9]>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
 	<![endif]-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.28.0/codemirror.min.css" integrity="sha256-jZCpvbpc2qMTgaR9eZxX0qxtyrGW+7SLgkQN+ngQKQs=" crossorigin="anonymous" />
 	<link rel="stylesheet" href="https://unpkg.com/codemirror-one-dark-theme@1.0.6" />
-	<link rel="stylesheet" href="https://rawgit.com/PandawanFr/MCSEditor/master/style.css">
+	<link rel="stylesheet" href="https://rawgit.com/coolsa/mcscriptEditor/master/style.css">
 </head>
 <body spellcheck="false">
 	<div id="nav">
-		<h1 id="nav-title">Minecraft Script Editor</h1>
+		<h1 id="nav-title">mcscript Editor</h1>
 		<div id="nav-container">
 			<button class="btn bar-btn" id="compile-btn">Compile</button>
 			<button class="btn bar-btn" id="download-btn">Download</button>
@@ -26,7 +26,7 @@
 	<div id="app">
 		<p class="btn hidden" id="msg"></p>
 		<div id="cont-original">
-			<p class="mini-title">Input.mcs</p>
+			<p class="mini-title">load.mcscript</p>
 			<textarea type="text" class="editor" id="editor"></textarea>
 		</div>
 		<div class="hidden" id="cont-compiled">
@@ -40,9 +40,9 @@
 			<div id="cursor-pos">0:0</div>
 		</div>
 		<div class="container container-right">
-			<a class="not-link">For Minecraft 1.12</a>
-			<a target="_blank" href="https://github.com/PandawanFr/mcs/wiki">Wiki</a>
-			<a target="_blank" href="https://github.com/PandawanFr/MCSEditor">GitHub</a>
+			<a class="not-link">For Minecraft 1.13</a>
+			<a target="_blank" href="https://github.com/Stevertus/mcscript/blob/master/README.md">Docs</a>
+			<a target="_blank" href="https://github.com/coolsa/mcscriptEditor">GitHub</a>
 		</div>
 	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.28.0/codemirror.min.js" integrity="sha256-aWhXcDXKdLgrSERG+VW43eHufU1IMcf6pG+9lUcxeIs=" crossorigin="anonymous"></script>
