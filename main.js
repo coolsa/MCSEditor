@@ -70,12 +70,14 @@ document.getElementById('compile-btn').addEventListener('click', function() {
         var output;
         try {
             // Calculate new output
-            output = mcs(inputVal);
+            output = myExtObject.compile(inputVal,'load.mcscript');
             // Need to reset current output so it doesn't show old functions
             currentOutput = {};
             // Populate the currentOutput data with the newly calculated data
-            var namespace = Object.keys(output)[0];
-            recursiveOutput(output[namespace], namespace, finalZip.folder(namespace));
+            for(var i = 0; i < output.length; i++){
+              finalZip.file(output[i].name,output[i].data);
+              currentOutput[output[i].name] = output[i].data;
+            }
         } catch (err) {
             showMsg(err, 'error');
             return;
@@ -149,27 +151,6 @@ document.getElementById('compile-btn').addEventListener('click', function() {
         }
     }
 });
-
-function recursiveOutput(data, name, zip) {
-    // If it's a namespace or a group, add it
-    if (data._type == "namespace" || data._type == "group") {
-        // Add name to subdir list
-        currentFinalDir.push(name);
-        // Recursive for each value
-        Object.keys(data).forEach(function(element) {
-            if (element != "_type") {
-                if (data[element]._type == "function") recursiveOutput(data[element], element, zip);
-                else recursiveOutput(data[element], element, zip.folder(element));
-            }
-        });
-        // Pop the dir
-        currentFinalDir.pop();
-    } else if (data._type == "function") {
-        zip.file(name + '.mcfunction', data.value);
-        // Write file
-        currentOutput[name + '.mcfunction'] = data.value;
-    }
-}
 
 function selectTab(tab) {
     var children = outputTitles.children;

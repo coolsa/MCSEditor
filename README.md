@@ -1,5 +1,5 @@
 # MCS Editor
-**[Try it](https://pandawanfr.github.io/MCSEditor/)**
+**[Try it](https://coolsa.github.io/mcscriptEditor/)**
 
 An Online editor for [Minecraft Script](https://github.com/PandawanFr/mcs).
 
@@ -12,24 +12,28 @@ Compiled:
 ![Output](http://i.imgur.com/iawn4zC.png)
 
 
-Check out the [documentation](https://github.com/PandawanFr/mcs/wiki) to learn how to write in Minecraft Script.
+Check out the [documentation](https://github.com/Stevertus/mcscript/blob/master/README.md) to learn how to write in mcscript.
 
 
 ## Credits
+
+Backend compiler is [mcscript.](https://github.com/Stevertus/mcscript/)
 
 Coding editor is [CodeMirror](https://codemirror.net/).
 
 CodeMirror Theme is [one-dark](https://github.com/Aerobird98/codemirror-one-dark-theme) (inspired from Atom's one dark).
 
+The theme for code highlighting is based off of the [Notepad++ highlighting.](https://github.com/Stevertus/mcscript/blob/master/Nodepad%2B%2B%20Highlighter.xml)
+
 ZIP Creator is [JSZip](https://stuk.github.io/jszip/).
 
 File Saver (download) is [FileSaver.js](https://github.com/eligrey/FileSaver.js/).
 
-Thanks to [@coolsa](https://github.com/coolsa) for adding local storage saving.
+Thanks to [@Pandawan](https://github.com/Pandawan) for basically making all of this, which I ported aka stole.
 
 Everything else is in custom vanilla JS, and CSS.
 
 ## License
-Please see the [LICENSE](https://github.com/PandawanFr/MCSEditor/blob/master/LICENSE) file
+Please see the [LICENSE](https://github.com/coolsa/mcscriptEditor/blob/master/LICENSE) file
 
-Minecraft Script is not affiliated with Minecraft or Mojang AB.
+mcscriptEditor is not affiliated with Minecraft, Mojang AB, or Stevertus.
