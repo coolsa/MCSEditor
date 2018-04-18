@@ -1,7 +1,7 @@
 # MCS Editor
 **[Try it](https://coolsa.github.io/mcscriptEditor/)**
 
-An Online editor for [Minecraft Script](https://github.com/PandawanFr/mcs).
+An Online editor for [mcscript](https://github.com/Stevertus/mcscript/).
 
 You can now download your compiled functions as a ZIP file!
 
@@ -16,8 +16,6 @@ Check out the [documentation](https://github.com/Stevertus/mcscript/blob/master/
 
 
 ## Credits
-
-Backend compiler is [mcscript.](https://github.com/Stevertus/mcscript/)
 
 Coding editor is [CodeMirror](https://codemirror.net/).
 
