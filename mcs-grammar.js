@@ -7,7 +7,7 @@ CodeMirror.defineSimpleMode("mcs", {
         },
         // Basic keywords
         {
-            regex: /(?:if|then|else|true|false|for|as|at|asat|positioned|align|dimension|rotated|anchored|while|do|forEach|raycast|stop|continue|switch|case|default|var|bool|boolean|tag|score|const)/,
+            regex: /(?:if|then|else|true|false|as|at|asat|positioned|align|dimension|rotated|anchored|while|do|forEach|for|raycast|stop|continue|switch|case|default|var|bool|boolean|tag|score|const)/,
             token: "keyword"
         },
         // Execute
