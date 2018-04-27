@@ -1,4 +1,4 @@
-var inputVal = '',
+var inputVal = '/project/functions/',
     showOutput = false,
     currentOutput = {};
 var cursorText = document.getElementById('cursor-pos');
@@ -11,6 +11,7 @@ var currentFinalDir = [];
 var finalZip = new JSZip();
 
 var editor = CodeMirror.fromTextArea(document.getElementById('editor'), {
+    firstLineNumber: 0,
     lineNumbers: true,
     theme: 'one-dark',
     mode: 'mcs'
@@ -52,7 +53,7 @@ editor.on('change', function(cm) {
 editor.on('cursorActivity', updateCursorInfo);
 
 // Local Storage
-if (localStorage.text == undefined) localStorage.text = "";
+if (localStorage.text == undefined) localStorage.text = "/project/functions/";
 // When it changes save it in local storage
 editor.on("change", function() {
     localStorage.text = editor.getValue();
@@ -70,7 +71,7 @@ document.getElementById('compile-btn').addEventListener('click', function() {
         var output;
         try {
             // Calculate new output
-            output = myExtObject.compile(inputVal,'load.mcscript');
+            output = myExtObject.compile(inputVal.substring(inputVal.indexOf('\n') + 1),editor.getLine(0));
             // Need to reset current output so it doesn't show old functions
             currentOutput = {};
             // Populate the currentOutput data with the newly calculated data
