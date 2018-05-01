@@ -1,4 +1,4 @@
-var inputVal = '/project/functions/',
+var inputVal = '',
     showOutput = false,
     currentOutput = {};
 var cursorText = document.getElementById('cursor-pos');
@@ -53,10 +53,14 @@ editor.on('change', function(cm) {
 editor.on('cursorActivity', updateCursorInfo);
 
 // Local Storage
-if (localStorage.text == undefined) localStorage.text = "/project/functions/";
+if (localStorage.text == undefined) localStorage.text = "";
+if (localStorage.folderName == undefined) localStorage.folderName = "folder-name/functions/";
+if (localStorage.fileName == undefined) localStorage.fileName = "load.mcscript";
 // When it changes save it in local storage
 editor.on("change", function() {
     localStorage.text = editor.getValue();
+    localStorage.folderName = document.getElementsByClassName("folder-name")[0].value;
+    localStorage.fileName = document.getElementsByClassName("file-name")[0].value;
 });
 // Update the text with the currently saved data on first load
 editor.setValue(localStorage.text);
@@ -71,7 +75,7 @@ document.getElementById('compile-btn').addEventListener('click', function() {
         var output;
         try {
             // Calculate new output
-            output = myExtObject.compile(inputVal.substring(inputVal.indexOf('\n') + 1),editor.getLine(0));
+            output = myExtObject.compile(inputVal,document.getElementsByClassName("folder-name")[0].value + document.getElementsByClassName("file-name")[0].value);
             // Need to reset current output so it doesn't show old functions
             currentOutput = {};
             // Populate the currentOutput data with the newly calculated data

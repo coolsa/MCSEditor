@@ -28,6 +28,7 @@ a:hover {
 	margin-top: 0.25em;
 	margin-bottom: 0;
 	margin-left: 0.25em;
+	border-bottom: 1px solid #181A1F;
 	border-top: 1px solid #181A1F;
 	border-left: 1px solid #181A1F;
 	border-right: 1px solid #181A1F;
@@ -35,6 +36,18 @@ a:hover {
 	border-top-left-radius: 3px;
 	border-top-right-radius: 3px;
 	padding: 0.25em;
+	width: auto;
+}
+input {
+	display: inline-block;
+	color: white;
+	background-color: #21252B;
+	font-weight: bold;
+	border-bottom: 1px solid #21252B;
+	border-top: 1px solid #21252B;
+	border-left: 1px solid #21252B;
+	border-right: 1px solid #21252B;
+	width: auto;
 }
 
 .mini-title:hover {
