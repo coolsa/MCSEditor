@@ -11,7 +11,8 @@ var currentFinalDir = [];
 var finalZip = new JSZip();
 
 var editor = CodeMirror.fromTextArea(document.getElementById('editor'), {
-    firstLineNumber: 0,
+    tabSize: 2,
+    indentWithTabs: true,
     lineNumbers: true,
     theme: 'one-dark',
     mode: 'mcs'
